@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  registry:
+    image: parameshg/matrix.registry:latest
+    build:
+      context: ../registry
+      dockerfile: Matrix.Agent.Registry/Dockerfile
+
+  configurator:
+    image: parameshg/matrix.configurator:latest
+    build:
+      context: ../configurator
+      dockerfile: Matrix.Agent.Configurator/Dockerfile
+
+  journal:
+    image: parameshg/matrix.journal:latest
+    build:
+      context: ../journal
+      dockerfile: Matrix.Agent.Journal/Dockerfile
+
+  directory:
+    image: parameshg/matrix.directory:latest
+    build:
+      context: ../directory
+      dockerfile: Matrix.Agent.Directory/Dockerfile
+
+  postman:
+    image: parameshg/matrix.postman:latest
+    build:
+      context: ../postman
+      dockerfile: Matrix.Agent.Postman/Dockerfile
+
+  # web:
+  #   image: parameshg/matrix.web:latest
+  #   build:
+  #     context: ../web
+  #     dockerfile: Matrix.Web/Dockerfile
+
+  # api:
+  #   image: parameshg/matrix.api:latest
+  #   build:
+  #     context: ../api
+  #     dockerfile: Matrix.Api/Dockerfile
